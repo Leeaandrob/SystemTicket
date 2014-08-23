@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>System Ticket Sky Reach</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="{{STATIC_URL}}css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+    <header class="navbar navbar-default navbar-static-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <div class="Navios">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Navios
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'navios:navio_create' %}"">Cadastrar Navios</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{%url 'navios:navio_lista' %}">Listar Navios</a></li>
+  </ul>
+</div>
+        </li>
+        <li>
+          <div class="Tickets">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Tickets
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'tickets:ticket_create' %}">Novo Ticket</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{%url 'tickets:ticket_lista' %}">Listar Tickets Abertos</a></li>
+  </ul>
+</div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div id="centro">
+        {%block content%}
+            <h1>System of Ticket version 0.1</h1>
+        {%endblock%}  
+</div>
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+		<script src="{{STATIC_URL}}js/scripts.js"></script>
+	</body>
+</html>

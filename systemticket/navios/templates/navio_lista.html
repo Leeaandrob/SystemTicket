@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%block content%}
+<h3>Listagem de navios</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Editar</th>
+			<th>Nome</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%for n in navios%}
+			<tr>
+				<td class="a-table">
+				<a href="{% url 'navios:navio_edit' navio_id=n.id %}">Editar</a></td>
+				<td>{{n.nome}}</td>
+			</tr>
+		{%endfor%}
+	</tbody>
+</table>
+
+
+{%endblock%}

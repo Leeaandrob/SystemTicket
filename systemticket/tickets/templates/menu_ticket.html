@@ -1,0 +1,4 @@
+<ul class="nav nav-pills">
+   <a class="btn btn-warning" href="{% url 'tickets:ticket_edit' ticket_id=ticket.id %}">Dados</a>
+   <a class="btn btn-primary" href="{% url 'tickets:ticket_observacoes' ticket_id=ticket.id %}">Observações</a>
+</ul>

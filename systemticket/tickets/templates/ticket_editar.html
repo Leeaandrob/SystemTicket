@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{%block content%}
+{% include 'menu_ticket.html' %}
+<h3>Novo ticket</h3>
+
+<form class="form-inline" method="POST" >
+	{% csrf_token %}			
+	<p><label>{{form.descricao.label}} :</label>{{form.descricao}}</p>
+	<p><label>{{form.navio.label}} :</label>{{form.navio}}</p>
+	<p><button type="submit" class="btn btn-success">Salvar</button></p>
+</form>	
+
+{%endblock%}

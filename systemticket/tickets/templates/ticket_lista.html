@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{%block content%}
+<h3>Listagem de tickets</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Editar</th>
+			<th>Descrição</th>
+			<th>Navio</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%for t in tickets%}
+			<tr>
+				<td class="a-table">
+				<a href="{% url 'tickets:ticket_edit' ticket_id=t.id %}">Editar</a></td>
+				<td>{{t.descricao}}</td>
+				<td>{{t.navio}}</td>
+			</tr>
+		{%endfor%}
+	</tbody>
+</table>
+
+
+{%endblock%}

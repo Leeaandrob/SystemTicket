@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block content%}
+{%include 'menu_ticket.html'%}
+
+<h3>Observações</h3>
+
+<form class="form-inline" method="POST" >
+	{% csrf_token %}			
+	<p><label>{{form.descricao.label}} :</label>{{form.descricao}}</p>
+	<p><button type="submit" class="btn btn-success">Salvar</button></p>
+</form>	
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Data da criação</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%for i in obs%}
+			<tr>
+				<td>{{i.created_at}}</td>
+				<td>{{i.descricao}}</td>
+			</tr>
+		{%endfor%}
+	</tbody>
+</table>
+
+{%endblock%}

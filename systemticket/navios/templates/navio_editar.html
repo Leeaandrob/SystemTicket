@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%block content%}
+
+<h3>Navio Novo</h3>
+
+<form class="form-inline" method="POST" >
+	{% csrf_token %}			
+	<p><label>{{form.nome.label}} :</label>{{form.nome}}</p>
+	<p><label>{{form.ip.label}} :</label>{{form.ip}}</p>
+	<p><label>{{form.designacao_hughes.label}} :</label>{{form.designacao_hughes}}</p>
+	<p><label>{{form.designacao_skyreach.label}} :</label>{{form.designacao_skyreach}}</p>
+	<p><label>{{form.esn_modem.label}} :</label>{{form.esn_modem}}</p>
+	<p><label>{{form.solucao_instalada.label}} :</label>{{form.solucao_instalada}}</p>
+	<p><button type="submit" class="btn btn-success">Salvar</button>
+</form>	
+
+{%endblock%}

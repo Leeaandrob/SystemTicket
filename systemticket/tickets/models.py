@@ -13,7 +13,7 @@ class Ticket(models.Model):
 
 
 class Observacao(models.Model):
-	descricao = models.CharField(max_length=100)
+	descricao = models.TextField(max_length=100)
 	ticket = models.ForeignKey(Ticket,null=True,blank=True)
 	created_at = models.DateTimeField(auto_now_add=True)
 	def __unicode__(self):

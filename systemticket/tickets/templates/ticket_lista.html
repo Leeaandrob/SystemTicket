@@ -5,19 +5,46 @@
 	<thead>
 		<tr>
 			<th>Editar</th>
-			<th>Descrição</th>
 			<th>Navio</th>
+			<th>Sumario</th>
+			<th>Descricao</th>
+			<th>N-Chamado</th>
+			<th>Status</th>
+			<th>Solucao</th>
+			
 		</tr>
 	</thead>
 	<tbody>
-		{%for t in tickets%}
-			<tr>
-				<td class="a-table">
-				<a href="{% url 'tickets:ticket_edit' ticket_id=t.id %}">Editar</a></td>
-				<td>{{t.descricao}}</td>
-				<td>{{t.navio}}</td>
-			</tr>
-		{%endfor%}
+
+
+	<!-- Texto de obs --><p><center>|| Caso esteja aberto, pode entrar aqui e pode editar. || Caso seja observação, pode entrar aqui e editar. || Caso esteja fechado, não pode editar ||</p></center>
+	{%for t in tickets%}
+
+	{% if t.status == "open" %}
+		<tr class="danger">
+		<td><a href="{% url 'tickets:ticket_edit' ticket_id=t.id %}">Editar</a></td>
+	{%else%}
+		{% if t.status == "obs" %}
+			<tr class="warning">
+			<td><a href="{% url 'tickets:ticket_edit' ticket_id=t.id %}">Editar</a></td>
+		{%else%}
+			<tr class="success">
+			<td>Fechado</td>
+		{%endif%}
+		
+	{%endif%}
+
+		
+
+
+        <td>{{ t.navio }}</td>
+        <td>{{ t.sumario }}</td>
+        <td>{{ t.descricao }}</td>
+        <td>{{ t.numero_chamado }}</td>
+        <td>{{ t.status }}</td>
+        <td>{{ t.solucao }}</td>
+        
+    {% endfor %}
 	</tbody>
 </table>
 

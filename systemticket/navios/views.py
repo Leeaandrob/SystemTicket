@@ -15,7 +15,8 @@ def navio_create(request):
 	return HttpResponseRedirect("/navios/lista/")
 
 def navio_lista(request):
-	return render(request, 'navio_lista.html', {'navios': Navio.objects.all()})
+    listar_navios = Navio.objects.all().order_by('nome')
+    return render(request, 'navio_lista.html', {'navios': listar_navios})
 
 
 def navio_edit(request,navio_id):

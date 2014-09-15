@@ -4,9 +4,13 @@
 <h3>Novo ticket</h3>
 
 <form class="form-inline" method="POST" >
-	{% csrf_token %}			
-	<p><label>{{form.descricao.label}} :</label>{{form.descricao}}</p>
-	<p><label>{{form.navio.label}} :</label>{{form.navio}}</p>
+	{% csrf_token %}
+	<p><label>{{form.sumario.label}} :</label>{{form.sumario}}{{form.sumario.errors}}</p>			
+	<p><label>{{form.descricao.label}} :</label>{{form.descricao}}{{form.descricao.errors}}</p>
+	<p><label>{{form.numero_chamado.label}} :</label>{{form.numero_chamado}}</p>
+	<p><label>{{form.navio.label}} :</label>{{form.navio}}{{form.navio.errors}}</p>
+	<p><label>{{form.status.label}} :</label>{{form.status}}{{form.status.errors}}</p>
+	<p><label>{{form.solucao.label}} :</label>{{form.solucao}}{{form.solucao.errors}}</p>
 	<p><button type="submit" class="btn btn-success">Salvar</button></p>
 </form>	
 

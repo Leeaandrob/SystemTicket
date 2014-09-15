@@ -1,0 +1,206 @@
+assim
+eu acho que to fazendo cagada
+
+
+saca so
+
+eu acho que to fazendo 4 metodos sendo que 1 e copia do outro
+
+não necessariamente
+você pode deixar tudo no mesmo
+mas você tem que saber se tu tá editando ou é novo
+por causa da criação do form
+tu cria uma instancia do teu objeto
+
+tu teria que enviar pela url algum parâmetro indicando se é novo ou edição
+
+
+hum... saquei, ate ok , mas eu ainda nao entendi meu erro, meu err
+oá
+tá, r
+ok uma pergunta
+
+meu erro entao tem haver , que app nao sabe se o edit e de algo novo ou ja existente e isso?
+calma
+
+isso aqui é teste ou real?
+
+
+teste
+e eu já vi essa porra, só não lembro o que é
+calma ai
+
+
+de uma outra maneira o erro ia pro menu_ticket, falando que o ticket_id estava errado quando fazia o update dos dados.
+
+
+
+como um detalhe faz diferença...
+
+um problema já foi
+
+caso tu nao coloque null=True,blank=True
+o campo é obrigatório
+não...
+
+não necessariamente tu deve colocar null=True,blank=True em todos os campos
+mas caso tu não coloque, o campo é obrigatório 
+
+Tipo 
+
+tu criou o campo provavelmente depois de um tempo, colocou no html do ticket_novo mas não colocou no ticket_editar
+
+apesar do dado ter ido no quando tu enviou os dados na instância, você não retornou ele pelo request
+ai deu erro dizendo que não veio um campo obrigatório
+
+por exemplo
+
+o form.nomedoteucampo.errors exibe algum erro de formulário
+
+iradoO...
+o outro erro foi por causa de tu ter COPIADO ERRADO
+
+if not form.is_valid():
+
+nessa linha, você verifica se seu formulário é errado, caso tenha algum erro, ele retorna pro html informando os form.errors
+
+caso seja váldo, ele não entra nesse if e salva sua parada
+
+uma coisa que dava dando zebra tbm era minha tupla de obs , open , closed, nao editava nem pelo caraleoo
+
+tu criou a view para criar uma observação e exibir lista
+cadê a do editar?
+eu nao fiz editar para obs
+ainda vou implementar, tenso...
+
+agora ta indo..
+
+so me ajuda somente mais em uma coisa?/ prometo nao pertubarmfla
+
+tipo, nao sei se e possivel mas e possivel eu por exemplo eu criar um if else a partir desses elementos aqui oo
+
+
+STATUS = (
+	('open', 'aberto'),
+	('closed', 'fechado'),
+	('obs', 'observacao')
+	)
+
+aqui...
+
+
+exemplo if aberto pode editar, elif se obs pode edtiatar
+ta
+que diabo de status é esse?
+
+ticket em observacao, a 
+
+
+closed o editar some, outra pergunta, nao exist elif aqui ??
+acho que sim
+já li algo do tipo
+mas estou habituado a usar if else
+bem melhor elif cabeca,
+
+
+ali da pra fazer com if, elif, else se, senao 
+
+sim, eu sei o que é
+tenta ai poo deixa de preguiça
+
+beleza..
+
+so uma pergunta, como funciona esse endif?
+
+por exemplo no else o edit ainda existe , pq?
+
+o django trabalha com identação para saber onde termina o bloco de algo
+mas no html, não tem como ele determinar onde termina o bloco de algo
+
+por isso existe o endif, endfor 
+
+endblock
+sacou?
+
+sim, vc e o cara browww!! <3
+
+o lance de aparecer foi só por organização mesmo 
+
+dúvida?
+
+
+ate entao nao, dps vou tentar implementar a obs, posso te perguntar acaso hava duv?
+sim, depende do horário, devo ir pro teatro mais tarde
+umas 19:30
+
+quando voltar vou dar um aperto no teu projeto, essa semana foi lentona pra mim 
+minha internet de palhaçada e chegando tarde em casa todo dia 
+foi broxante 
+
+ai
+no sistema lá do trabalho
+fiz um módulo muito foda de simulados 
+tipo de prova online de faculdade 
+o professor chega, cadastra várias perguntas 
+apontando pra 1 ano e uma disciplina 
+
+ele cria um simulado para 1 ano e disciplina que ele leciona (um professor pode dar aula de matemática e geometria ou física sei lá)
+
+ele cria o simulado e escolhe as perguntas a partir de um banco de questões 
+que todos os professores cadastraram.. para aquele ano e disciplina do simulado 
+
+irado em, to em contato com 2 professores, vamos conversar de criar um sistema de ensino online para ele, esse conhecimento pdoe ser util em. hehe
+ai, o professor escolhe as turmas que ele da aula 
+vai aparecer somente as turmas que ele da aula daquele ano e disciplina
+tipo
+criou um simulado para 5ª série de matemática 
+só aparece as turmas de 5ª série que ele da aula 
+ele coloca a turma pra ter o simulado 
+
+ai o aluno loga lá 
+escolhe a disciplina e aparece o simulado pra ele fazer
+e já exibe o gabarito dizendo as que ele acertou ou errou
+
+muito foda, tipo um filter a partir de um argumento ne?
+vários filtros cara... carnaval foi grande
+to a uma semana nesse módulo 
+essa semana foi tensa demais 
+
+
+vc e o cara vc tem um grande futuro a frente, espero ser seu amigo ate la :) <3
+
+seu conhecimento de django gostaria de ter apenas 10%
+
+hehe
+vai ter, só se esforçar.. falou com o paulo victor?
+
+ainda nao essa semana voi
+ corrida sistem la da sebrae saca?
+
+ fala com ele...
+ só toma cuidado com as merdas que tu diz
+ ou mostrar erros pra ele...
+
+ ele é muito inteligênte 
+ muito mesmo 
+
+
+ ele tem um filho de 1 ano 
+ se o filho dele herdar 5% da inteligência dele, ele é mais inteligênte que cabo frio inteiro 
+ Oo,
+
+ mas me resume as merdas que eu digo ai :(
+
+ criar dois atributos com o mesmo nome
+ se ele visse isso, te excluía na hora
+ Oo
+
+ ok, kk vou tomar um banho irmao agradeco de coracao, nao esqueci sua garrafa termica nao e vou lhe dar um red haha
+
+ tomar um banho aqui ja volto
+ vlw
+
+ to online,
+ vou revisar uns projetos aqui...
+
+ bezu

@@ -8,10 +8,23 @@ from systemticket.tickets.forms import TicketForm,ObservacaoForm
 from systemticket.tickets.models import Ticket,Observacao
 
 def ticket_create(request):
+	form = TicketForm(request.POST)
+	if not form.is_valid():
+		return render(request, 'ticket_novo.html',{'form':form})
+	obj = form.save()
+	return HttpResponseRedirect('/tickets/lista/')
+
+def ticket_lista(request):
+	listar_tickets = Ticket.objects.all().order_by('-id')
+	return render(request,"ticket_lista.html",{'tickets':listar_tickets})
+
+def ticket_edit(request,ticket_id):
+	ticket = get_object_or_404(Ticket,id=ticket_id)
 	if request.method == 'POST':
-		return ticket_post(request)
+		return edit_post(request,ticket)
 	else:
-		return ticket_get(request)
+		return render(request,"ticket_editar.html",{'form':TicketForm(instance=ticket),'ticket':ticket})
+
 
 def ticket_post(request):
 	form = TicketForm(request.POST)
@@ -25,27 +38,14 @@ def ticket_get(request):
 	return render(request,"ticket_novo.html",{'form':form})
 
 
-def ticket_lista(request):
-	return render(request,"ticket_lista.html",{'tickets':Ticket.objects.all()})
-
-
-def ticket_edit(request,ticket_id):
-	ticket = get_object_or_404(Ticket,id=ticket_id)
-	if request.method == 'POST':
-		return edit_post(request,ticket)
-	else:
-		return edit_get(request,ticket)
-
 def edit_post(request,ticket):
 	form = TicketForm(request.POST,instance=ticket)
 	if not form.is_valid():
-		return render(request, 'ticket_editar.html',{'form': form})
-	obj = form.save()
-	return HttpResponseRedirect("/tickets/lista/")
+		return render(request, 'ticket_editar.html',{'form': form,'ticket':ticket})
 
-def edit_get(request,ticket):
-	form = TicketForm(instance=ticket)
-	return render(request,"ticket_editar.html",{'form':form,'ticket':ticket})
+	obj = form.save(commit=False)
+	obj.save()
+	return HttpResponseRedirect("/tickets/lista/")
 
 def ticket_observacoes(request,ticket_id):
 	ticket = get_object_or_404(Ticket,id=ticket_id)

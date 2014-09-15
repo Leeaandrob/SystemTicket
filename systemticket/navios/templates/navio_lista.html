@@ -6,6 +6,10 @@
 		<tr>
 			<th>Editar</th>
 			<th>Nome</th>
+			<th>Designacao Hughes</th>
+			<th>Designacao Sky Reach</th>
+			<th>ENS MODEM</th>
+			<th>Solucao</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,7 +18,12 @@
 				<td class="a-table">
 				<a href="{% url 'navios:navio_edit' navio_id=n.id %}">Editar</a></td>
 				<td>{{n.nome}}</td>
+				<td>{{n.designacao_hughes}}</td>
+				<td>{{n.designacao_skyreach}}</td>
+				<td>{{n.esn_modem}}</td>
+				<td>{{n.solucao_instalada}}</td>
 			</tr>
+
 		{%endfor%}
 	</tbody>
 </table>

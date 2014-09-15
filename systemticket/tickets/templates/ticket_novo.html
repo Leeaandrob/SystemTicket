@@ -4,9 +4,13 @@
 <h3>Abrir um chamado.</h3>
 
 <form class="form-inline" method="POST" >
-	{% csrf_token %}			
+	{% csrf_token %}
+	<p><label>{{form.sumario.label}} :</label>{{form.sumario}}</p>			
 	<p><label>{{form.descricao.label}} :</label>{{form.descricao}}</p>
+	<p><label>{{form.numero_chamado.label}} :</label>{{form.numero_chamado}}</p>
 	<p><label>{{form.navio.label}} :</label>{{form.navio}}</p>
+	<p><label>{{form.status.label}} :</label>{{form.status}}</p>
+	<p><label>{{form.solucao.label}} :</label>{{form.solucao}}</p>
 	<p><button type="submit" class="btn btn-success">Salvar</button></p>
 </form>	
 
